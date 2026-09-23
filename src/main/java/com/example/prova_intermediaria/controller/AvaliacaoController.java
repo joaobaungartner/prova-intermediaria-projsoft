@@ -27,8 +27,8 @@ public class AvaliacaoController {
 
     @GetMapping
     public List<Avaliacao> listar(
-            @RequestParam(name = "nome", required = false) String nome) {
-        return avaliacaoService.listar(nome);
+            @RequestParam(name = "autor", required = false) String autor) {
+        return avaliacaoService.listar(autor);
     }
 
     @DeleteMapping("/{id}")
