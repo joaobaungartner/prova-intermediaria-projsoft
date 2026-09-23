@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.text.DateFormat;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "avaliacoes")
@@ -28,7 +29,7 @@ public class Avaliacao {
     private Nota nota;
 
     @Column(nullable = false)
-    private DateFormat dataAvaliacao;
+    private LocalDate dataAvaliacao;
 
     @Column(nullable = false)
     private boolean deletado = false;
