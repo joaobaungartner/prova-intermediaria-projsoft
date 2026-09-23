@@ -25,11 +25,11 @@ public class AvaliacaoService {
     }
 
     public List<Avaliacao> listar(String autor) {
-        if (autor == null || autor.isEmpty()) {
+        if (autor == null || autor.isBlank()) {
             return avaliacaoRepository.findByDeletadoFalse();
         }
 
-        return avaliacaoRepository.findByNomeStartingWithAndDeletadoFalse(autor);
+        return avaliacaoRepository.findByAutorStartingWithAndDeletadoFalse(autor);
     }
 
     public void deletar(Long id) {

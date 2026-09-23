@@ -93,12 +93,12 @@ public class AvaliacaoServiceTest {
     }
 
     @Test
-    void deveListarComFiltroPeloInicioDoNome() {
+    void deveListarComFiltroPeloInicioDoAutor() {
         Avaliacao avaliacao = new Avaliacao();
         avaliacao.setAutor("Java básico");
         List<Avaliacao> esperados = List.of(avaliacao);
 
-        when(avaliacaoRepository.findByNomeStartingWithAndDeletadoFalse("Java"))
+        when(avaliacaoRepository.findByAutorStartingWithAndDeletadoFalse("Java"))
                 .thenReturn(esperados);
 
         List<Avaliacao> resultado = avaliacaoService.listar("Java");
@@ -106,7 +106,7 @@ public class AvaliacaoServiceTest {
         assertEquals(esperados, resultado);
 
         verify(avaliacaoRepository)
-                .findByNomeStartingWithAndDeletadoFalse("Java");
+                .findByAutorStartingWithAndDeletadoFalse("Java");
         verifyNoMoreInteractions(avaliacaoRepository);
     }
 

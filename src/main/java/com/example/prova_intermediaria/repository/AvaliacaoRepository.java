@@ -9,5 +9,5 @@ public interface AvaliacaoRepository extends JpaRepository<Avaliacao, Long> {
 
     List<Avaliacao> findByDeletadoFalse();
 
-    List<Avaliacao> findByNomeStartingWithAndDeletadoFalse(String nome);
+    List<Avaliacao> findByAutorStartingWithAndDeletadoFalse(String autor);
 }
